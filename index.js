@@ -1,18 +1,24 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+
 require("dotenv").config();
 
 const app = express();
 
-mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Server Connected to Database");
-  });
+const connectToServer = async () => {
+  try {
+    await mongoose.connect(process.env.DATABASE, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Server Connected to MongoDB Atlas Database");
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+connectToServer();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
