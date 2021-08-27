@@ -16,9 +16,9 @@ module.exports = function validateRegisterInput(data) {
   }
 
   // E-mail checks
-  if (email.isEmpty(data.email)) {
+  if (Validator.isEmpty(data.email)) {
     errors.email = "Email field is required.";
-  } else if (Validator.isEmail(data.email)) {
+  } else if (!Validator.isEmail(data.email)) {
     errors.email = "Email is invalid.";
   }
 
@@ -31,13 +31,13 @@ module.exports = function validateRegisterInput(data) {
     errors.password2 = "Password confirm is required.";
   }
 
-  if (Validator.isLength(data.password, { min: 6, max: 30 })) {
+  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = "Password must be between 6 and 30 characters";
   }
 
-  if (Validator.equals(data.password2, data.password2)) {
+  if (!Validator.equals(data.password2, data.password2)) {
     errors.password2 = "Passwords must match.";
   }
-  
+
   return { errors, isValid: isEmpty(errors) };
 };
