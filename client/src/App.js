@@ -1,8 +1,14 @@
+import { BrowserRouter, Route } from "react-router-dom";
+
+import { NavBar } from "./components/NavBar";
+
 function App() {
   return (
-    <div className="container-outer">
-      <h1>APP</h1>
-    </div>
+    <BrowserRouter>
+      <div>
+        <NavBar />
+      </div>
+    </BrowserRouter>
   );
 }
 
