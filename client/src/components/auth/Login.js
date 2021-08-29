@@ -53,6 +53,10 @@ export const Login = () => {
         />
         <button>Submit</button>
       </form>
+      <h3>Don't have an account?</h3>
+      <Link to="/register">
+        <button>Register</button>
+      </Link>
     </div>
   );
 };
