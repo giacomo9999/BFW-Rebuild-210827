@@ -44,6 +44,22 @@ export const Register = () => {
           value={formState.email}
           onChange={onChange}
         />
+        <label className="h-label">Password</label>
+        <input
+          className="h-input"
+          type="password"
+          name="password"
+          value={formState.password}
+          onChange={onChange}
+        />
+        <label className="h-label">Confirm Password</label>
+        <input
+          className="h-input"
+          type="password"
+          name="password2"
+          value={formState.password2}
+          onChange={onChange}
+        />
         <button>Submit</button>
       </form>
       <h3>Already registered?</h3>

@@ -136,7 +136,7 @@ button {
   text-decoration: none;
   display: inline-block;
   margin: 10px auto;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -148,7 +148,7 @@ button:hover {
 /* Form (General Use)*/
 
 .h-form {
-  width: 75%;
+  width: 50%;
   margin: 25px auto;
   border: 1px solid #acbac9;
   padding: 15px 15px 0 15px;
